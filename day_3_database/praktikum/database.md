@@ -44,6 +44,6 @@ Query yang digunakan untuk membuat **tabel order**;
 ### **Join**
 
 Salah satu contoh join\
-`select \* from orders join customer on orders.customer_id = customers.id;
+`select * from orders join customer on orders.customer_id = customers.id;`
 
 ![](../screenshot/join.png)
