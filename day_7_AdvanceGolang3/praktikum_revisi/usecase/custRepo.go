@@ -32,7 +32,7 @@ func (db *CustRepository) GetById(id int) (cust model.Custommer, err error) {
 	return
 }
 
-func (db *CustRepository) GetAll() (cust model.Custommer, err error) {
+func (db *CustRepository) GetAll() (cust model.Custommers, err error) {
 	if err = db.DbHandler.Find(&cust).Error; err != nil {
 		return
 	}
