@@ -5,5 +5,5 @@ services:
     image: postgres
     environment:
       - POSTGRES_PASSWORD="password"
-  app:
+  go:
     build: .

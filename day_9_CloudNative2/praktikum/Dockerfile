@@ -1,14 +1,23 @@
-FROM golang:alpine
-
+FROM golang:alpine as builder
 WORKDIR /app
+
 COPY . .
-RUN go mod tidy
-RUN go build -o main
-ENTRYPOINT ["./app/main"]
+
+RUN go mod download
+RUN go build -o main .
+
+CMD ["./main"]
+
+
+
 
 # WORKDIR /app
-# COPY go.mod ./
-# COPY go.sum ./
+# COPY . .
+# RUN go mod tidy
+# RUN go build -o main
+# ENTRYPOINT ["./app/main"]
+
+# WORKDIR /app
 # RUN go mod download
     
 # COPY . ./
@@ -16,4 +25,3 @@ ENTRYPOINT ["./app/main"]
 # RUN go build -o main main.go
 
 # EXPOSE 8080
-# CMD ["./app/main"]
