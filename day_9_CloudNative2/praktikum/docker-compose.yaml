@@ -5,5 +5,5 @@ services:
     image: postgres
     environment:
       - POSTGRES_PASSWORD="password"
-  redis:
-    image: redis
+  app:
+    build: .
